@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block body %}
+    <h3> ({{ input }}) was not found, Did you mean:</h3>
+    <ul>
+        {% for entry in choices %}
+            <li><a href="{% url 'entry' title=entry %}">{{ entry }}</a></li>
+        
+        {% endfor %}
+    </ul>
+{% endblock %}
